@@ -4,7 +4,7 @@
     padding-top: 0px;
     margin-top: 0px;
     font-family: Arial, Helvetica, sans-serif;
-    font-size: 11px;
+    font-size: 18px;
     border: none;
     padding: 0px 20px 0px;
     font-weight: bold;
@@ -16,4 +16,10 @@
 }
 .mySlides {
     display:none;
+}
+.signup_table{
+    display: table;
+    border-collapse: separate;
+    border-top: 200px;
+    border-color: red;
 }
