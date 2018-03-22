@@ -5,10 +5,8 @@ from .models import *
 # Create your views here.
 
 def home(request):
-<<<<<<< HEAD
-	return render(request,"base.html",{})
-=======
 	return render(request,'index.html',{})
+
 def signup(request):
 	if(request.method=='POST'):
 		form=studentForm(request.POST)
@@ -27,4 +25,4 @@ def signup(request):
 	else:
 		form=studentForm()
 	return render(request,'signup.html',{'form':form})
->>>>>>> 359c76260b56925ad74fad35b62e6f5e389653a8
+
