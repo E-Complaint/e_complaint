@@ -3,7 +3,13 @@
 <head>
 		<script type="text/javascript"></script>
         {% load static %}
+<<<<<<< HEAD
 		<link rel="stylesheet" type="text/css" href="{% static "index_css.css" %}">
+=======
+		<link rel="stylesheet" type="text/css" href="{%static 'index_css.css' %}">
+        {% block head %}
+        {% endblock %}
+>>>>>>> 359c76260b56925ad74fad35b62e6f5e389653a8
 </head>
 <body>	
 <table style="height: 56px" width="100%" cellspacing="0" cellpadding="0" border="0">
@@ -13,10 +19,15 @@
         	    <tbody>
                    	<tr>
                        	<td style="width: 60px" rowspan="3">
+<<<<<<< HEAD
                              <img width="100" height="100" src="complaint.jpg">
+=======
+                            {% load static %} 
+                            <img width="100" height="100"src="{% static 'logo/complaint.jpg' %}">
+>>>>>>> 359c76260b56925ad74fad35b62e6f5e389653a8
                          </td>
                           <td style="width: 382px" rowspan="3">
-                         <img width="400" height="150" src="logo1.png">
+                         <img width="400" height="150" src="{% static 'logo/logo1.png' %}">
                      	</td>
                      	
                         <td rowspan="3" style="width: 23110px">
@@ -27,13 +38,13 @@
                                         </td>
                                     </tr>
                                     <tr>
-                                        <td style="width: 420px" align="center">
-                                            <a id="ctl00_HyperLink4" href="Index.aspx" style="font-size:Small;">
+                                        <td style="width: 420px" align="right">
+                                            <a id="ctl00_HyperLink4" href="Index.aspx" style="font-size:18px;">
                                             	Home
                                             </a>
                                            
                                             |
-                                            <a id="ctl00_HyperLink3" href="Contact-NCH.aspx" style="font-size:Smaller;">Contact Us
+                                            <a id="ctl00_HyperLink3" href="Contact-NCH.aspx" style="font-size:19px;">Contact Us
                                             </a>
                                             &nbsp;&nbsp;
                                         </td>
@@ -46,7 +57,11 @@
                             </table>
                         </td>
                         <td style="width: 351px" rowspan="3" align="right">
+<<<<<<< HEAD
                         	<img width="100" height="100" src="nit.png">
+=======
+                        	<img width="100" height="100"src="{% static 'logo/nit.png' %}">
+>>>>>>> 359c76260b56925ad74fad35b62e6f5e389653a8
                         </td>
                     </tr>
                     <tr>
@@ -63,7 +78,7 @@
 	<tbody>
         <tr>
             <td id="plc" class="TopMenu" style="font-weight: bold; width: 100px; height: 14px" bgcolor="#D8530B">
-                <a href="Index.aspx" style="color:blue">
+                <a href="{{ home }}" style="color:blue">
                    	Home
                 </a>
             </td>
@@ -117,5 +132,7 @@
         </tr>
     </tbody>
 </table>
+{% block body %}
+{% endblock %}
 </body>
 </html>
