@@ -6,6 +6,18 @@ from .models import *
 
 def home(request):
 	return render(request,'complaint/index.html',{})
+def blog(request):
+	return render(request,'complaint/blog.html',{})
+def contact(request):
+	return render(request,'complaint/contact.html',{})
+def services(request):
+	return render(request,'complaint/services.html',{})
+def portfolio(request):
+	return render(request,'complaint/portfolio.html',{})
+
+
+
+
 
 def signup(request):
 	if(request.method=='POST'):
