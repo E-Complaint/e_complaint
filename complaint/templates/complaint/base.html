@@ -37,18 +37,18 @@
 							<span class="icon-bar"></span>
 						</button>
 						<div class="navbar-brand">
-							<a href="index.html"><h1><span>M</span>ulti</h1></a>
+							<a href="{% url 'home' %}"><h1><span>M</span>ulti</h1></a>
 						</div>
 					</div>
 					
 					<div class="navbar-collapse collapse">							
 						<div class="menu">
 							<ul class="nav nav-tabs" role="tablist">
-								<li role="presentation"><a href="index.html" class="active">Home</a></li>
-								<li role="presentation"><a href="services.html">Services</a></li>
-								<li role="presentation"><a href="blog.html">Blog</a></li>
-								<li role="presentation"><a href="portfolio.html">Portfolio</a></li>
-								<li role="presentation"><a href="contact.html">Contact</a></li>						
+								<li role="presentation"><a href="{% url 'home' %}" class="active">Home</a></li>
+								<li role="presentation"><a href="{% url 'services' %}">Services</a></li>
+								<li role="presentation"><a href="{% url 'blog' %}">Blog</a></li>
+								<li role="presentation"><a href="{% url 'portfolio' %}">Portfolio</a></li>
+								<li role="presentation"><a href="{% url 'contact' %}">Contact</a></li>						
 							</ul>
 						</div>
 					</div>						
