@@ -5,7 +5,7 @@ from .models import *
 # Create your views here.
 
 def home(request):
-	return render(request,'index.html',{})
+	return render(request,'complaint/index.html',{})
 
 def signup(request):
 	if(request.method=='POST'):
