@@ -7,6 +7,7 @@
     {% endblock %}
   </head>
   <body>
+    {% block body %}
     {% load static %}
 	<section id="blog" class="container">
         <div class="text-center">
@@ -169,7 +170,7 @@
         </div>
     </section><!--/#blog-->
 	
-	
+	{% endblock %}
 	
   </body>
 </html>
