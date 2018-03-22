@@ -6,13 +6,14 @@ from .models import *
 
 def home(request):
 	return render(request,'complaint/index.html',{})
-def blog(request):
+def profile(request):
 	return render(request,'complaint/blog.html',{})
 def contact(request):
 	return render(request,'complaint/contact.html',{})
-def services(request):
-	return render(request,'complaint/services.html',{})
-def portfolio(request):
+def register(request):
+	form=studentForm()
+	return render(request,'complaint/services.html',{'form':form})
+def log(request):
 	return render(request,'complaint/portfolio.html',{})
 
 
