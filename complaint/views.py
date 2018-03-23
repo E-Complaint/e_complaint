@@ -14,11 +14,8 @@ def register(request):
 	form=studentForm()
 	return render(request,'complaint/services.html',{'form':form})
 def log(request):
-	return render(request,'complaint/portfolio.html',{})
-
-
-
-
+	form=studentForm()
+	return render(request,'complaint/portfolio.html',{'form':form})
 
 def signup(request):
 	if(request.method=='POST'):
@@ -37,5 +34,29 @@ def signup(request):
 			return HttpResponseRedirect('/')
 	else:
 		form=studentForm()
-	return render(request,'signup.html',{'form':form})
+	return render(request,'complaint/signup.html',{'form':form})
+
+def login(request):
+	if(request.method=='POST'):
+		form=loginForm(request.POST)
+		if(form.is_valid()):
+			roll_no=form.cleaned_data['roll_no']
+			try:
+				ins=student.objects.get(roll_no=roll_no)
+				password=form.cleaned_data['password']
+				if(ins.password==password):
+					return render(request,'complaint/index.html',{})
+				else:
+					var="Invalid Password"
+					return render(request,'complaint/login.html',{'var':var})
+			except:
+				var="Invalid Roll No."
+				return render(request,'complaint/login.html',{'var':var})
+
+	else:
+		form=loginForm()
+	return render(request,'complaint/portfolio.html',{'form':form})
+
+
+
 

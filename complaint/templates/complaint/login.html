@@ -1,0 +1,39 @@
+{% extends 'complaint/base.html' %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    
+    {% block head %}
+    <style >
+    	.login {
+    		background-color: black;
+    	}
+    	.sign{
+    		/*background-image: url("/static/complaint/images/slider/3.jpg");*/
+    		background-color: #00ffca;
+    	}
+    </style>
+	{% endblock %}
+  </head>
+  <body>
+  	{% block body %}
+  	{% load static %}
+  	<div class="container">
+			<div class="text-center">
+				<div class="wow bounceInDown" data-wow-offset="0" data-wow-delay="0.3s" >
+					<h2>
+					<p>
+					<font color=#ff8f00 size="20">{{var}}</font> 
+					</p>
+					</h2>
+					<h3>
+						<a href="{% url 'signup' %}"> Sign Up</a>
+					</h3>						
+				</div>
+			</div>
+	</div>
+		
+	
+	{% endblock %}
+  </body>
+</html>

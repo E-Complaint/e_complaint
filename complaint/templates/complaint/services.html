@@ -8,6 +8,10 @@
     	.login {
     		background-color: black;
     	}
+    	.sign{
+    		/*background-image: url("/static/complaint/images/slider/3.jpg");*/
+    		background-color: #00ffca;
+    	}
     </style>
 	{% endblock %}
   </head>
@@ -18,9 +22,10 @@
 		<div class="container">
 			<div class="text-center">
 				<div class="services-box">
-					<div class="wow bounceInDown" data-wow-offset="0" data-wow-delay="0.3s">
+					<div class="wow bounceInDown" data-wow-offset="0" data-wow-delay="0.3s" >
+						<div>
 						<h8>
-							<form method="POST">
+							<form method="POST" class="sign">
 							{% csrf_token %}
 							<table bgcolor="black">
 								{{form.as_p}}
@@ -28,6 +33,7 @@
 							<input type="submit"  value="Login" class="login">
 							</form>
 						</h8>
+						</div>
 						<h2>Our Services</h2>					
 					</div>
 					<div class="wow bounceInDown" data-wow-offset="0" data-wow-delay="0.6s">	
@@ -39,7 +45,7 @@
 							<i class="fa fa-rocket fa-3x"></i>	
 						</div>
 						<div class="wow fadeInUp" data-wow-offset="0" data-wow-delay="0.3s">
-							<h4>Retina Ready</h4>
+							<h4>Easy Communication</h4>
 							<p>Cras urna felis accumsan at ultricesid posuere masa um socisd natoque penatibus magnisd</p>
 						</div>
 					</div>
@@ -49,7 +55,7 @@
 							<i class="fa fa-cogs fa-3x"></i>
 						</div>
 						<div class="wow fadeInUp" data-wow-offset="0" data-wow-delay="0.9s">
-							<h4>Responsive</h4>
+							<h4>Quick Response</h4>
 							<p>Cras urna felis accumsan at ultricesid posuere masa um socisd natoque penatibus magnisd</p>
 						</div>
 					</div>
@@ -59,15 +65,21 @@
 							<i class="fa fa-eye fa-3x"></i>
 						</div>
 						<div class="wow fadeInUp" data-wow-offset="0" data-wow-delay="1.5s">
-							<h4>Free Support</h4>
+							<h4>Fast Acknowlegement</h4>
 							<p>Cras urna felis accumsan at ultricesid posuere masa um socisd natoque penatibus magnisd</p>
 						</div>
-					</div>
+					</div>n a elin a elit in lorem congue varius. Sed nec arcu. Etiam sit amet augue. Fusce fermen tum neque a rutrum varius odio pede ullamcorp-er tellus ut dignissim nisi risus non tortor. Aliquam mollis neque.
+
+n a elit in lorem congue varius. Sed nec arcu. Etiam sit amet augue. Fusce fermen tum neque a rutrum varius odio pede ullamcorp-er tellus ut dignissim nisi risus non tortor. Aliquam mollis neque.
+
+t in lorem congue varius. Sed nec arcu. Etiam sit amet augue. Fusce fermen tum neque a rutrum varius odio pede ullamcorp-er tellus ut dignissim nisi risus non tortor. Aliquam mollis neque.
+
+
 				</div>
 			</div>
 		</div>
 		
-		<div class="container">
+		<!--<div class="container">
 			<div class="text-center">
 				<div class="wow bounceInDown" data-wow-offset="0" data-wow-delay="0.3s">
 					<h2>Team</h2>					
@@ -79,7 +91,7 @@
 				<div class="wow fadeInRight" data-wow-offset="0" data-wow-delay="0.3s">
 					<div class="col-md-3">
 						<img src="{% static 'complaint/images/services/1.jpg' %}" alt="" >
-						<h3>John Doe</h3>
+						<h3>john de/h3>
 						<p>Lorem ipsum dolor sit amet consectetur adipisicing eil sed deiusmod tempor</p>
 					</div>
 				</div>
@@ -108,10 +120,10 @@
 					</div>
 				</div>
 			</div>	
-		</div>
+		</div>-->
 	</div>
 	
-	<div class="skills">
+	<!--<div class="skills">
 		<div class="container">
 			<div class="text-center">
 				<div class="wow bounceInDown" data-wow-offset="0" data-wow-delay="0.3s">
@@ -122,9 +134,9 @@
 				</div>
 			</div>
 		</div>
-	</div>
+	</div>-->
 	
-	<div class="skill">
+	<!--<div class="skill">
 		<div class="container">
 			<div class="text-center">
 				<div class="col-md-6 wow fadeInRight" data-wow-offset="0" data-wow-delay="0.3s">									
@@ -165,7 +177,7 @@
 						</div>
 					</div>
 				</div>
-			</div><!--/.col-sm-6-->
+			</div>/.col-sm-6
 			
 			<div class="services-skill">	
 				<div class="text-center">
@@ -206,7 +218,7 @@
 				</div>
 			</div>
 		</div>	
-	</div>	
+	</div>-->
 
 	
 	{% endblock %}
