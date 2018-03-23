@@ -2,6 +2,7 @@ from django.shortcuts import render
 from django.http import HttpResponse,HttpResponseRedirect
 from .forms import *
 from .models import *
+from .my_library import create_dynamic 
 # Create your views here.
 
 def home(request):
@@ -11,11 +12,19 @@ def profile(request):
 def contact(request):
 	return render(request,'complaint/contact.html',{})
 def register(request):
-	form=studentForm()
+	if(request.method=='POST'):
+		form=complaintForm()
+		if(form.is_valid()):
+
+			ins.comp_type=form.cleaned_data['comp_type']
+			ins.hall=form.cleaned_data['hall']
+			ins.room=form.cleaned_data['room']
+			ins.mobile=form.cleaned_data['mobile']
+			ins.comment=form.cleaned_data['comment']
+			ins.save()
+	else:
+		form=complaintForm()
 	return render(request,'complaint/services.html',{'form':form})
-def log(request):
-	form=studentForm()
-	return render(request,'complaint/portfolio.html',{'form':form})
 
 def signup(request):
 	if(request.method=='POST'):
@@ -31,6 +40,8 @@ def signup(request):
 			ins.password=form.cleaned_data['password']
 			ins.room=form.cleaned_data['room']
 			ins.save()
+			st="st_"+str(ins.roll)
+			create_dynamic(st)
 			return HttpResponseRedirect('/')
 	else:
 		form=studentForm()
@@ -45,6 +56,7 @@ def login(request):
 				ins=student.objects.get(roll_no=roll_no)
 				password=form.cleaned_data['password']
 				if(ins.password==password):
+					
 					return render(request,'complaint/index.html',{})
 				else:
 					var="Invalid Password"
