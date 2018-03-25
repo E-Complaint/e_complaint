@@ -14,4 +14,5 @@ class loginForm(forms.Form):
 class complaintForm(ModelForm):
 	class Meta:
 		model=dummy
-		fields="__all__"
+		fields=('comp_type','hall','room','mobile','comment')
+		#fields="__all__"
