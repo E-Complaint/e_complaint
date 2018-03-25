@@ -11,3 +11,7 @@ class studentForm(ModelForm):
 class loginForm(forms.Form):
 	roll_no=forms.CharField(max_length=20,help_text="enter your roll no.")
 	password=forms.CharField(max_length=20,widget=forms.PasswordInput())
+class complaintForm(ModelForm):
+	class Meta:
+		model=dummy
+		fields="__all__"
