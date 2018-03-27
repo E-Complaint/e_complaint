@@ -10,17 +10,32 @@ import importlib
 def home(request):
 	return render(request,'complaint/index.html',{})
 def profile(request):
+	user=""
 	if 'user' in request.COOKIES:
 		user=request.COOKIES['user']
 		if(user=='NULL'):
 			return HttpResponseRedirect('/log/')
 	else:
 		return HttpResponseRedirect('/log/')
-	
+	username=user.split("_")[1]
+	ins=student.objects.get(roll=username)
+	stu_name=ins.name
+	stu_hall=ins.hall
+	stu_room=ins.room
+	stu_mobile=ins.mobile
+	stu_email=ins.email
+	stu_roll=ins.roll
+	ins.save()
+	module=importlib.import_module('complaint.models')
+	class_=getattr(module,user)
+	last_one=class_.objects.filter(status='Registered').order_by('-id')[:1]
+	last_two=class_.objects.filter(status='seen')
+	#print (len(list(last_one)))
+	context={'name':stu_name,'hall':stu_hall,'room':stu_room,'mobile':stu_mobile,'email':stu_email,'roll_no':stu_roll,'detail':last_one}
+	return render(request,'complaint/blog.html',context)
 
 
 
-	return render(request,'complaint/blog.html',{})
 def contact(request):
 	return render(request,'complaint/contact.html',{})
 def logout(request):

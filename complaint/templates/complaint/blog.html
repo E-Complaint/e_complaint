@@ -4,13 +4,56 @@
   <head>
    
     {% block head %}
+      <style>
+        .word {
+          word-spacing: 30px;
+          color: #4633ff;
+          font-size: 20px;
+          font-weight: bold;
+        }
+        .word_value {
+          word-spacing: 15px;
+          color:  #202022 ;
+          font-size: 18px;
+          font-weight: bold;
+        }
+      </style>
     {% endblock %}
   </head>
   <body>
     {% block body %}
     {% load static %}
+    <div class="container">
+      <div class="text-center">
+        <br><br><br>
+        
+        <font color="black"><strong>Name:</strong></font> <font color="blue"><strong>{{name}} 
+        </font> </strong> <br>
+        <font color="black"><strong>Roll No:</strong></font> <font color="blue"><strong>{{roll_no}} </font> </strong><br>
+
+        <font color="black"><strong>Hall No.:</strong></font> <font color="blue"><strong>{{hall}} </font> </strong><br>
+        <font color="black"><strong>Room No:</strong></font> <font color="blue"><strong>{{room}} </font> </strong><br>
+        <font color="black"><strong>Mobile No:</strong></font> <font color="blue"><strong>{{mobile}} </font> </strong><br>
+
+        <font color="black"><strong>Email:</strong></font> <font color="blue"><strong>{{email}} </font> </strong><br><br><br>
+        <h3><font color="orange">{{name}}</font><font color="black"><strong> Your Recent Complaint Detail is:</strong></font></h3><br>
+        <div class="word">
+          Comp_id Comp_type Date_time Status
+        </div>
+        <br>
+        <div class="word_value">
+          {% for item in detail %}
+            {{item.id}} {{item.comp_type}} {{item.date_time}} {{item.status}}<br>
+
+          {% endfor %}
+          
+        </div>
+          }
+      </div>
+  </div>
+
 	
-	
+	<br><br><br><br><br><br><br><br><br>
 	{% endblock %}
 	
   </body>
