@@ -12,11 +12,11 @@ complaint_type=(("Furniture","Furniture"),
 
 class dummy(models.Model):
 	comp_id=models.CharField(primary_key=True,max_length=20,default="16CA6000_0")
-	comp_type=models.CharField(max_length=10,choices=complaint_type)
+	comp_type=models.CharField(max_length=15,choices=complaint_type)
 	date_time=models.DateTimeField(auto_now_add=True)
 	hall=models.IntegerField(blank=False)
 	room=models.DecimalField(max_digits=3,decimal_places=0,blank=False)
-	mobile=models.DecimalField(max_digits=10,decimal_places=0,blank=False)
+	mobile=models.DecimalField(max_digits=11,decimal_places=0,blank=False)
 	comment=models.CharField(max_length=300)
 
 class student(models.Model):
@@ -32,3 +32,16 @@ class st_16CA6001(models.Model):
 	date_time=models.DateTimeField(auto_now_add=True)
 	comp_type=models.CharField(max_length=10,choices=complaint_type)
 	status=models.CharField(max_length=10,default="Registered")
+
+
+class st_16CA6032(models.Model):
+	date_time=models.DateTimeField(auto_now_add=True)
+	comp_type=models.CharField(max_length=10,choices=complaint_type)
+	status=models.CharField(max_length=10,default="Registered")
+
+
+
+class st_16CA6023(models.Model):
+	date_time=models.DateTimeField(auto_now_add=True)
+	comp_type=models.CharField(max_length=10,choices=complaint_type)
+	status=models.CharField(max_length=15)
