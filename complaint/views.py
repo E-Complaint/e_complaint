@@ -16,6 +16,7 @@ def profile(request):
 			return HttpResponseRedirect('/log/')
 	else:
 		return HttpResponseRedirect('/log/')
+	
 
 
 

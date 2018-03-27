@@ -6,7 +6,7 @@ def create_instance(user):
 	#file.write("	comp_id=models.CharField(max_length=120)\n")
 	file.write("	date_time=models.DateTimeField(auto_now_add=True)\n")
 	file.write("	comp_type=models.CharField(max_length=10,choices=complaint_type)\n")
-	file.write("	status=models.CharField(max_length=10)\n")
+	file.write("	status=models.CharField(max_length=10,choices=status_choices,default='Registered')\n")
 	file.write("	hall=models.IntegerField(blank=False)\n")
 	file.write("	room=models.DecimalField(max_digits=3,decimal_places=0,blank=False)\n")
 	file.write("	mobile=models.DecimalField(max_digits=10,decimal_places=0,blank=False)\n")

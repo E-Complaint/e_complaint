@@ -9,7 +9,12 @@ complaint_type=(("Furniture","Furniture"),
 				("Electricity","Electricity"),
 				("Water","Water"),
 			)
-
+status_choices=(
+				("Registered","Registered"),
+				("Seen","Seen"),
+				("Assigned","Assigned"),
+				("Completed","Completed"),
+			)
 class dummy(models.Model):
 	comp_id=models.CharField(primary_key=True,max_length=20,default="16CA6000_0")
 	comp_type=models.CharField(max_length=10,choices=complaint_type)
@@ -31,4 +36,22 @@ class student(models.Model):
 class st_16CA6001(models.Model):
 	date_time=models.DateTimeField(auto_now_add=True)
 	comp_type=models.CharField(max_length=10,choices=complaint_type)
-	status=models.CharField(max_length=10,default="Registered")
+	status=models.CharField(max_length=10,default="Registered",choices=status_choices)
+
+class st_16CA6023(models.Model):
+	date_time=models.DateTimeField(auto_now_add=True)
+	comp_type=models.CharField(max_length=10,choices=complaint_type)
+	status=models.CharField(max_length=10,choices=status_choices,default='Registered')
+	hall=models.IntegerField(blank=False)
+	room=models.DecimalField(max_digits=3,decimal_places=0,blank=False)
+	mobile=models.DecimalField(max_digits=10,decimal_places=0,blank=False)
+	comment=models.CharField(max_length=300)
+
+class st_16CA6004(models.Model):
+	date_time=models.DateTimeField(auto_now_add=True)
+	comp_type=models.CharField(max_length=10,choices=complaint_type)
+	status=models.CharField(max_length=10,choices=status_choices,default='Registered')
+	hall=models.IntegerField(blank=False)
+	room=models.DecimalField(max_digits=3,decimal_places=0,blank=False)
+	mobile=models.DecimalField(max_digits=10,decimal_places=0,blank=False)
+	comment=models.CharField(max_length=300)
