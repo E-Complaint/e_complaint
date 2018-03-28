@@ -16,3 +16,7 @@ class complaintForm(ModelForm):
 		model=dummy
 		fields=('comp_type','hall','room','mobile','comment')
 		#fields="__all__"
+
+class admin_loginForm(forms.Form):
+	user_name=forms.CharField(max_length=20,help_text="enter your user_name")
+	password=forms.CharField(max_length=20,widget=forms.PasswordInput())

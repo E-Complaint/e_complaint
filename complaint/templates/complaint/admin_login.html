@@ -1,0 +1,51 @@
+{% extends 'complaint/base.html' %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    
+    {% block head %}
+    <style >
+    	.login {
+    		background-color: black;
+    	}
+    	.sign{
+    		/*background-image: url("/static/complaint/images/slider/3.jpg");*/
+    		background-color: #00ffca;
+    	}
+    </style>
+	{% endblock %}
+  </head>
+  <body>
+  	{% block body %}
+  	{% load static %}
+
+	<br>
+	<br><br><br><br><br><br><br><br>
+  	<div class="container">
+			<div class="text-center">
+				<div class="wow bounceInDown" data-wow-offset="0" data-wow-delay="0.3s" >
+					<div>
+						<h8>
+							<form method="POST" class="sign">
+							{% csrf_token %}
+							<table bgcolor="black">
+								{{form.as_p}}
+							</table>
+							<input type="submit"  value="Login" class="login">
+							<input type="reset"  value="Reset" class="login">
+							<br>
+							
+							</form>
+						</h8>
+					</div>
+											
+				</div>
+			</div>
+	</div>
+	<br>
+	<br><br><br><br><br><br><br><br>
+		
+	
+	{% endblock %}
+  </body>
+</html>

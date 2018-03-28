@@ -28,13 +28,39 @@ def profile(request):
 	ins.save()
 	module=importlib.import_module('complaint.models')
 	class_=getattr(module,user)
-	last_one=class_.objects.filter(status='Registered').order_by('-id')[:1]
-	last_two=class_.objects.filter(status='seen')
+	#last_one=class_.objects.filter(status='Registered').order_by('-id')[:1]
+	last_reg=class_.objects.filter(status='Registered')
+	last_seen=class_.objects.filter(status='seen')
+	last_ass=class_.objects.filter(status='Assigned')
 	#print (len(list(last_one)))
-	context={'name':stu_name,'hall':stu_hall,'room':stu_room,'mobile':stu_mobile,'email':stu_email,'roll_no':stu_roll,'detail':last_one}
+	context={'name':stu_name,'hall':stu_hall,'room':stu_room,'mobile':stu_mobile,'email':stu_email,'roll_no':stu_roll,'detail_reg':last_reg,'detail_seen':last_seen,'detail_ass':last_ass}
 	return render(request,'complaint/blog.html',context)
 
+def admin_login(request):
+	if(request.method=='POST'):
+		form=admin_loginForm(request.POST)
+		if(form.is_valid()):
+			Admin_name=form.cleaned_data['user_name']
+			try:
+				#print(roll_no)
+				ins=admin_people.objects.get(user_name=Admin_name)
+				print("Found")
+				password=form.cleaned_data['password']
+				if(ins.password==password):
+					return render(request,'complaint/admin_base.html',{})
+				else:
+					var="Invalid Password"
+					return HttpResponse("Invalid Password")
+			except:
+				var="Invalid Roll No."
+				return HttpResponse("Invalid admin_name")
 
+	else:
+		form=admin_loginForm()
+	return render(request,'complaint/admin_login.html',{'form':form})
+
+def admin_profile(request):
+	return render(request,'complaint/admin_profile')
 
 def contact(request):
 	return render(request,'complaint/contact.html',{})
@@ -131,6 +157,13 @@ def login(request):
 	else:
 		form=loginForm()
 	return render(request,'complaint/portfolio.html',{'form':form})
+
+def admin_home(request):
+	return render(request,'complaint/admin_home.html',{})
+
+def furniture_(request):
+	furniture_comp=dummy.objects.filter(comp_type='Furniture')
+	return render(request,'complaint/furniture.html',{'furniture_comp':furniture_comp})
 
 
 

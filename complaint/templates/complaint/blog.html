@@ -17,6 +17,9 @@
           font-size: 18px;
           font-weight: bold;
         }
+        table{
+          border-collapse: collapse;
+        }
       </style>
     {% endblock %}
   </head>
@@ -36,19 +39,35 @@
         <font color="black"><strong>Mobile No:</strong></font> <font color="blue"><strong>{{mobile}} </font> </strong><br>
 
         <font color="black"><strong>Email:</strong></font> <font color="blue"><strong>{{email}} </font> </strong><br><br><br>
-        <h3><font color="orange">{{name}}</font><font color="black"><strong> Your Recent Complaint Detail is:</strong></font></h3><br>
+        <h3><font color="orange">{{name}}</font><font color="black"><strong> Your Recent Complaint Details are:</strong></font></h3><br>
+        
         <div class="word">
           Comp_id Comp_type Date_time Status
         </div>
         <br>
+      
         <div class="word_value">
-          {% for item in detail %}
+          {% for item in detail_reg %}
+            {{item.id}} {{item.comp_type}} {{item.date_time}} {{item.status}}<br>
+
+          {% endfor %}
+      
+          {% for item in detail_seen %}
+            {{item.id}} {{item.comp_type}} {{item.date_time}} {{item.status}}<br>
+
+          {% endfor %}
+
+          {% for item in detail_ass %}
             {{item.id}} {{item.comp_type}} {{item.date_time}} {{item.status}}<br>
 
           {% endfor %}
           
         </div>
-          }
+      
+
+      
+
+  </div>
       </div>
   </div>
 

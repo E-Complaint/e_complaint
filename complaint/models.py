@@ -23,6 +23,10 @@ class dummy(models.Model):
 	room=models.DecimalField(max_digits=3,decimal_places=0,blank=False)
 	mobile=models.DecimalField(max_digits=11,decimal_places=0,blank=False)
 	comment=models.CharField(max_length=300)
+class admin_people(models.Model):
+	name=models.CharField(max_length=30)
+	user_name=models.CharField(max_length=20,primary_key=True)
+	password=models.CharField(max_length=20)
 
 class student(models.Model):
 	roll=models.CharField(max_length=8,primary_key=True,blank=False)
@@ -33,3 +37,8 @@ class student(models.Model):
 	mobile=models.CharField(max_length=10,blank=False)
 	email=models.EmailField(unique=True,blank=False)
 	password=models.CharField(max_length=20,blank=False)
+
+class st_16CA6032(models.Model):
+	date_time=models.DateTimeField(auto_now_add=True)
+	comp_type=models.CharField(max_length=10,choices=complaint_type)
+	status=models.CharField(max_length=15,choices=status_choices,default='Registered')
