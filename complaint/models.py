@@ -15,6 +15,15 @@ status_choices=(
 				("Assigned","Assigned"),
 				("Completed","Completed"),
 			)
+class furni_emp(models.Model):
+	name=models.CharField(max_length=25,default="abc")
+	free=models.CharField(max_length=50,default="0000-00-00-00")
+class water_emp(models.Model):
+	name=models.CharField(max_length=25,default="abc")
+	free=models.CharField(max_length=50,default="0000-00-00-00")
+class elec_emp(models.Model):
+	name=models.CharField(max_length=25,default="abc")
+	free=models.CharField(max_length=50,default="0000-00-00-00")
 class dummy(models.Model):
 	comp_id=models.CharField(primary_key=True,max_length=20,default="16CA6000_0")
 	comp_type=models.CharField(max_length=15,choices=complaint_type)
