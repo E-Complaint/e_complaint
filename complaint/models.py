@@ -23,6 +23,8 @@ class dummy(models.Model):
 	room=models.DecimalField(max_digits=3,decimal_places=0,blank=False)
 	mobile=models.DecimalField(max_digits=11,decimal_places=0,blank=False)
 	comment=models.CharField(max_length=300)
+	status=models.CharField(max_length=15,choices=status_choices,default='Registered')
+	
 class admin_people(models.Model):
 	name=models.CharField(max_length=30)
 	user_name=models.CharField(max_length=20,primary_key=True)

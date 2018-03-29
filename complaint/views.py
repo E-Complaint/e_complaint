@@ -4,6 +4,7 @@ from .forms import *
 from .models import *
 from .my_library import create_dynamic 
 import importlib
+from django.db.models import Q
 
 # Create your views here.
 
@@ -162,7 +163,7 @@ def admin_home(request):
 	return render(request,'complaint/admin_home.html',{})
 
 def furniture_(request):
-	furniture_comp=dummy.objects.filter(comp_type='Furniture')
+	furniture_comp=dummy.objects.filter(Q(comp_type='Furniture') & Q(status='Registered'))
 	return render(request,'complaint/furniture.html',{'furniture_comp':furniture_comp})
 
 
