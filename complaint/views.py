@@ -4,10 +4,13 @@ from .forms import *
 from .models import *
 from .my_library import create_dynamic 
 import importlib
-
+import queue
 # Create your views here.
-
+furni_que=queue.Queue()
+water_que=queue.Queue()
+elec_que=queue.Queue()
 def home(request):
+	
 	return render(request,'complaint/index.html',{})
 def profile(request):
 	user=""
