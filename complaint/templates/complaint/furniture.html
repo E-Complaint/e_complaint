@@ -30,7 +30,9 @@
 
 
 {% block content %}
-
+<div>
+	<h3 align="center">Newly Registered Furniture Complaints</h3>
+</div>
 <br><br><br>
 <div class="services">
 <div class="services-box">
@@ -44,6 +46,7 @@
 			<th>Room No.</th>
 			<th>Mobile</th>
 			<th>Comment</th>
+			<th>Status</th>
 		</tr>
 
 	{% for item in furniture_comp %}
@@ -56,9 +59,13 @@
 			<td align="center">{{item.room}}</td> 
 			<td align="center">{{item.mobile}}</td>  
 			<td align="center">{{item.comment}}</td>
+			<td align="center">{{item.status}}</td>
 		</tr>
 	
 	{% endfor %}
+<div>
+	<h3 align="center">Solved water Complaints</h3>
+</div>
 </table>
 </div>
 </div>

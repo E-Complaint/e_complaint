@@ -35,12 +35,12 @@
     <button class="w3-button" title="Notifications">Complaints <i class="fa fa-caret-down"></i></button>     
     <div class="w3-dropdown-content w3-card-4 w3-bar-block">
       <a href="{% url 'furniture_comp' %}" class="w3-bar-item w3-button">Furniture</a>
-      <a href="#" class="w3-bar-item w3-button">Electricity</a>
-      <a href="#" class="w3-bar-item w3-button">Water</a>
+      <a href="{% url 'electricity_comp' %}" class="w3-bar-item w3-button">Electricity</a>
+      <a href="{% url 'water_comp' %}" class="w3-bar-item w3-button">Water</a>
     </div>
   </div>
   <a href="{% url 'admin_logout' %}" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Log Out</a>
-  <a href="#" class="w3-bar-item w3-button w3-hide-small w3-right w3-hover-teal" title="Search"><i class="fa fa-search"></i></a>
+  <a href="/search/" class="w3-bar-item w3-button w3-hide-small w3-right w3-hover-teal" title="Search"><i class="fa fa-search"></i></a>
  </div>
 
   <!-- Navbar on small screens -->
@@ -67,27 +67,27 @@
 <div class="w3-row"><br>
 
 <div class="w3-quarter">
-  <img src="/w3images/avatar.jpg" alt="Boss" style="width:45%" class="w3-circle w3-hover-opacity">
-  <h3>Johnny Walker</h3>
-  <p>Web Designer</p>
+  <img src="{% static 'complaint/images/slider/furniture.jpeg' %}" alt="Boss" style="width:45%" class="w3-circle w3-hover-opacity">
+  <h3>Harry Potter</h3>
+  <p>Furniture</p>
 </div>
 
 <div class="w3-quarter">
-  <img src="/w3images/avatar.jpg" alt="Boss" style="width:45%" class="w3-circle w3-hover-opacity">
-  <h3>Rebecca Flex</h3>
-  <p>Support</p>
+  <img src="{% static 'complaint/images/slider/electicity.jpeg' %}" alt="Boss" style="width:45%" class="w3-circle w3-hover-opacity">
+  <h3>Bhabubali</h3>
+  <p>Electricity</p>
 </div>
 
 <div class="w3-quarter">
-  <img src="/w3images/avatar.jpg" alt="Boss" style="width:45%" class="w3-circle w3-hover-opacity">
-  <h3>Jan Ringo</h3>
-  <p>Boss man</p>
+  <img src="{% static 'complaint/images/slider/water.jpeg' %}" alt="Boss" style="width:45%" class="w3-circle w3-hover-opacity">
+  <h3>Rajnikant</h3>
+  <p>Water</p>
 </div>
 
 <div class="w3-quarter">
-  <img src="/w3images/avatar.jpg" alt="Boss" style="width:45%" class="w3-circle w3-hover-opacity">
+  <img src="{% static 'complaint/images/slider/manager.jpeg' %}" alt="Boss" style="width:45%" class="w3-circle w3-hover-opacity">
   <h3>Kai Ringo</h3>
-  <p>Fixer</p>
+  <p>Manager</p>
 </div>
 
 </div>

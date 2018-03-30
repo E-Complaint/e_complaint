@@ -17,12 +17,76 @@
           font-size: 18px;
           font-weight: bold;
         }
-        table{
+        table {
+    border-collapse: collapse;
+    width: 100%;
+    border-width: 12px;
+}
+
+th{
+    text-align: center;
+    padding: 8px;
+}
+td {
+    border: 1px solid #ddd;
+    text-align: center;
+    padding: 8px;
+    color: blue;
+}
+tr:nth-child(even){background-color: #f2f2f2}
+
+th {
+    background-color: #4CAF50;
+    color: white;
+}
+#id_otp {
+  color: black;
+
+}
+.helptext{
+  color: black;
+}
+label{
+  color: blue;
+}
+      /*  #admin {
+
+          font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
           border-collapse: collapse;
-        }
+          width: 100%;
+    }
+
+    #admin td{
+      border: 1px solid #ddd;
+      padding: 8px;
+      color: white;
+    }
+    #admin th{
+      border: 1px solid #ddd;
+      padding: 8px;
+      color: #005FFF;
+    }
+
+   /* #admin tr:nth-child(even){background-color: gray;}
+    #admin tr:nth-child(odd){background-color: gray;}
+  
+  #admin tr{ background-color: white; }
+  #admin tr:nth-child(even){background-color: gray;}
+  #admin tr:nth-child(odd){background-color: green;} 
+    #admin tr:hover {background-color: #00AAFF;}
+
+    #customers th {
+        padding-top: 12px;
+        padding-bottom: 12px;
+        text-align: left;
+        background-color: gray;
+        color: black;
+      }*/
       </style>
     {% endblock %}
+
   </head>
+
   <body>
     {% block body %}
     {% load static %}
@@ -40,40 +104,85 @@
 
         <font color="black"><strong>Email:</strong></font> <font color="blue"><strong>{{email}} </font> </strong><br><br><br>
         <h3><font color="orange">{{name}}</font><font color="black"><strong> Your Recent Complaint Details are:</strong></font></h3><br>
+   </div>
+   </div>
         
-        <div class="word">
-          Comp_id Comp_type Date_time Status
-        </div>
-        <br>
+
+  <div class="services">
+<div class="services-box">
+<div class="wow bounceInDown" data-wow-offset="0" data-wow-delay="3s" >
+  <table id="admin">
+    <tr >
+      <th >Comp. Id</th>
+      <th>Comp. Type</th>
+      <th>Date&Time</th>
+      <th>Status</th>
+      <th>OTP</th>
       
-        <div class="word_value">
-          {% for item in detail_reg %}
-            {{item.id}} {{item.comp_type}} {{item.date_time}} {{item.status}}<br>
+    </tr>
 
-          {% endfor %}
-      
-          {% for item in detail_seen %}
-            {{item.id}} {{item.comp_type}} {{item.date_time}} {{item.status}}<br>
-
-          {% endfor %}
-
-          {% for item in detail_ass %}
-            {{item.id}} {{item.comp_type}} {{item.date_time}} {{item.status}}<br>
-
-          {% endfor %}
+  {% for item in detail_reg %}
+    <tr>
+      <td align="center">{{roll_no}}_{{item.id}}</td>
+      <td align="center">{{item.comp_type}}</td> 
+      <td align="center">{{item.date_time}}</td>  
+      <td align="center">{{item.status}}</td>  
+      <td>
+        <form method="POST" color="black">
+          {% csrf_token %}
+          {{form.as_p}}
+          <input  type="submit" name="OTP">
           
-        </div>
-      
+        </form>
+          
+      </td> 
+    </tr>
+  {% endfor %}
 
-      
+  {% for item in detail_seen %}
+    <tr>
+      <td align="center">{{item.id}}</td>
+      <td align="center">{{item.comp_type}}</td> 
+      <td align="center">{{item.date_time}}</td>  
+      <td align="center">{{item.status}}</td>  
+      <td>
+        <form method="POST" color="black">
+          {% csrf_token %}
+          {{form.as_p}}
+          <input type="submit" name="OTP">
+          
+        </form>
+          
+      </td> 
+    </tr>
+  {% endfor %}
 
-  </div>
-      </div>
-  </div>
+  {% for item in detail_ass %}
+    <tr>
+      <td align="center">{{item.id}}</td>
+      <td align="center">{{item.comp_type}}</td> 
+      <td align="center">{{item.date_time}}</td>  
+      <td align="center">{{item.status}}</td>  
+      <td>
+        <form method="POST">
+          {% csrf_token %}
+          {{form.as_p}}
+          <input type="submit" name="OTP">
+          
+        </form>
+          
+      </td>
+    </tr>
+  {% endfor %}
 
-	
-	<br><br><br><br><br><br><br><br><br>
-	{% endblock %}
+</table>
+</div>
+</div>
+</div>
+
+  <br><br><br><br><br><br>
+{% endblock %}
+
 	
   </body>
 </html>

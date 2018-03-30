@@ -1,0 +1,81 @@
+{% extends 'complaint/admin_base.html' %}
+{% block head %}
+<style type="text/css">
+	table {
+    border-collapse: collapse;
+    width: 100%;
+    border-width: 12px;
+}
+
+th{
+    text-align: center;
+    padding: 8px;
+}
+td {
+    border: 1px solid #ddd;
+    text-align: center;
+    padding: 8px;
+    color: blue;
+}
+tr:nth-child(even){background-color: #f2f2f2}
+
+th {
+    background-color: #4CAF50;
+    color: white;
+}
+.helptext{
+  color: black;
+}
+label{
+  color: blue;
+}
+</style>
+{% endblock %}
+{% block content %}
+<div align="center">
+<form method="POST">
+	{% csrf_token %}
+	<table>
+		{{ form.as_p }}
+	</table>
+	<input type="submit" name="search" value="search">
+</form>
+</div>
+<br><br><br>
+<div class="services">
+<div class="services-box">
+<div class="wow bounceInDown" data-wow-offset="0" data-wow-delay="3s" >
+	<table id="admin">
+		<tr>
+			<th >Comp. Id</th>
+			<th>Comp. Type</th>
+			<th>Date&Time</th>
+			<th>Hall No.</th>
+			<th>Room No.</th>
+			<th>Mobile</th>
+			<th>Comment</th>
+			<th>Status</th>
+		</tr>
+		<div>
+			<h3 align="center">Complaint details is </h3>
+
+		</div>
+	
+		<tr>
+			<td align="center">{{atr.comp_id}}</td>
+			<td align="center">{{atr.comp_type}}</td> 
+			<td align="center">{{atr.date_time}}</td>  
+			<td align="center">{{atr.hall}}</td> 	
+			<td align="center">{{atr.room}}</td> 
+			<td align="center">{{atr.mobile}}</td>  
+			<td align="center">{{atr.comment}}</td>
+			<td align="center">{{atr.status}}</td>
+		</tr>
+	
+</table>
+</div>
+</div>
+</div>
+
+	<h1 align="center" color="red">{{msg}}</h1>
+{% endblock %}

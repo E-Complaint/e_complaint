@@ -20,3 +20,7 @@ class complaintForm(ModelForm):
 class admin_loginForm(forms.Form):
 	user_name=forms.CharField(max_length=20,help_text="enter your user_name")
 	password=forms.CharField(max_length=20,widget=forms.PasswordInput())
+class otp_form(forms.Form):
+	otp=forms.IntegerField(help_text="Enter OTP ")
+class search_form(forms.Form):
+	complaint_id=forms.CharField(max_length=15)

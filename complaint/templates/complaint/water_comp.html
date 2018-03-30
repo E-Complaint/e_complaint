@@ -1,0 +1,70 @@
+{% extends 'complaint/admin_base.html' %}
+
+{% block head %}
+	<style>
+		#admin {
+
+    			font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    			border-collapse: collapse;
+    			width: 100%;
+		}
+
+		#admin td, #admin th {
+			border: 1px solid #ddd;
+			padding: 8px;
+		}
+
+		#admin tr:nth-child(even){background-color: #f2f2f2;}
+
+		#admin tr:hover {background-color: #ddd;}
+
+		#customers th {
+    		padding-top: 12px;
+    		padding-bottom: 12px;
+    		text-align: left;
+    		background-color: #4CAF50;
+    		color: white;
+    	}
+	</style>
+{% endblock %}
+
+
+{% block content %}
+
+<br><br><br>
+<div class="services">
+<div class="services-box">
+<div class="wow bounceInDown" data-wow-offset="0" data-wow-delay="3s" >
+	<table id="admin">
+		<tr>
+			<th >Comp. Id</th>
+			<th>Comp. Type</th>
+			<th>Date&Time</th>
+			<th>Hall No.</th>
+			<th>Room No.</th>
+			<th>Mobile</th>
+			<th>Comment</th>
+			<th>Status</th>
+		</tr>
+		<div>
+			<h3 align="center">Newly Registered water Complaints</h3>
+		</div>
+	{% for item in furniture_comp %}
+	
+		<tr>
+			<td align="center">{{item.comp_id}}</td>
+			<td align="center">{{item.comp_type}}</td> 
+			<td align="center">{{item.date_time}}</td>  
+			<td align="center">{{item.hall}}</td> 	
+			<td align="center">{{item.room}}</td> 
+			<td align="center">{{item.mobile}}</td>  
+			<td align="center">{{item.comment}}</td>
+			<td align="center">{{item.status}}</td>
+		</tr>
+	
+	{% endfor %}
+</table>
+</div>
+</div>
+</div>
+{% endblock %}
