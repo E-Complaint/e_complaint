@@ -71,10 +71,10 @@ def admin_login(request):
 					return render(request,'complaint/admin_base.html',{})
 				else:
 					var="Invalid Password"
-					return HttpResponse("Invalid Password")
+					return render(request,'complaint/admin_login.html',{'form':form,'var':var})
 			except:
-				var="Invalid Roll No."
-				return HttpResponse("Invalid admin_name")
+				var="Invalid Admin Username"
+				return render(request,'complaint/admin_login.html',{'form':form,'var':var})
 
 	else:
 		form=admin_loginForm()
