@@ -19,16 +19,20 @@
  
  # Technologies Used
    * Language
+   
          > Python3
       
-   * Framework 
+   * Framework
+   
          > Django
       
    *  Database
+   
          > SQLite
       
    *  Others
          > SMTP
+         
          > Multiprocessing
       
  # Steps to run the django server
