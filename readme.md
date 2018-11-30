@@ -9,6 +9,7 @@
     Student side have following facilites.
     > Registration of complaint
     > Check the status of Complaint
+    > Verification of completed work by OTP 
  # Manager Side 
     * Can check the new and unfinished complaints.
     * Complaint are shown in departmental manner.
