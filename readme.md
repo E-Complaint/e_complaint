@@ -5,24 +5,32 @@
     For this system we have designed two sides 
     * Student side
     * Manager side
+    
  # Student Side
     Student side have following facilites.
     > Registration of complaint
     > Check the status of Complaint
     > Verification of completed work by OTP 
+    
  # Manager Side 
     * Can check the new and unfinished complaints.
     * Complaint are shown in departmental manner.
+    * Can search the specific complaint by using complaint id.
  
  # Technologies Used
-    Language
+   * Language
       > Python3
       
-    Framework 
+     Framework 
       > Django
       
-    Database
+     Database
       > SQLite
+      
+     Others
+      > SMTP
+      > Multiprocessing
+      
  # Steps to run the django server
     > Locate manage.py file
     > Open the terminal at that location
