@@ -28,12 +28,13 @@
       
    *  Database
    
-         > SQLite
+            > SQLite
       
    *  Others
-         > SMTP
+      
+            > SMTP
          
-         > Multiprocessing
+          > Multiprocessing
       
  # Steps to run the django server
     > Locate manage.py file
