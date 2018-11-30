@@ -19,17 +19,17 @@
  
  # Technologies Used
    * Language
-      > Python3
+         > Python3
       
    * Framework 
-      > Django
+         > Django
       
    *  Database
-      > SQLite
+         > SQLite
       
    *  Others
-      > SMTP
-      > Multiprocessing
+         > SMTP
+         > Multiprocessing
       
  # Steps to run the django server
     > Locate manage.py file
