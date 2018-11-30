@@ -21,13 +21,13 @@
    * Language
       > Python3
       
-     Framework 
+   * Framework 
       > Django
       
-     Database
+   *  Database
       > SQLite
       
-     Others
+   *  Others
       > SMTP
       > Multiprocessing
       
