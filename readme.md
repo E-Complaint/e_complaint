@@ -28,11 +28,11 @@
       
    *  Database
    
-            > SQLite
+          > SQLite
       
    *  Others
       
-            > SMTP
+          > SMTP
          
           > Multiprocessing
       
